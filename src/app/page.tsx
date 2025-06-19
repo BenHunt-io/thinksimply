@@ -1,5 +1,4 @@
-import { Typography, Button, Card, CardContent, Box } from '@mui/joy';
-import FontExamples from './font-examples';
+import { Typography, Box } from '@mui/joy';
 
 export default function Home() {
   return (
