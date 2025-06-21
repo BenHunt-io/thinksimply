@@ -4,8 +4,6 @@ date: "2020-07-01"
 title: "Who are you?"
 ---
 
-<br/>
-
 # Who are you
 
 Are you the color of your skin? Are you obese? Are you a hometown hero? Are you a farmer in a rural village? Are you a serial entrepreneur? Are you what your parents fantasize you to be? Are you a spooky lump of self aware atoms? What makes you, **you?**
@@ -282,7 +280,7 @@ Internet:
 
 - [Time Perception](http://www.exactlywhatistime.com/psychology-of-time/time-perception/)
 
-       - The brain therefore **reorganizes** the information and presents it in a more easily understandable form. In the case of familiar information, very little time is needed for this process, but new information requires more processing and this extra processing tends to makes time feel elongated. This is part of the reason why a child’s summer seems to last forever, while an old person’s well-practiced routine seems to slip away faster and faster. The more familiar the task, the less new information the brain needs to process, and the more quickly time seems to pass.
+  - The brain therefore **reorganizes** the information and presents it in a more easily understandable form. In the case of familiar information, very little time is needed for this process, but new information requires more processing and this extra processing tends to makes time feel elongated. This is part of the reason why a child’s summer seems to last forever, while an old person’s well-practiced routine seems to slip away faster and faster. The more familiar the task, the less new information the brain needs to process, and the more quickly time seems to pass.
 
   (This is because of the basal ganglia) - In evolutionary terms, the ability to perceive time on very small scales may be the difference between life and death for small, vulnerable animals.
 

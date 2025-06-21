@@ -10,14 +10,25 @@ export default async function Post({
 }) {
   const { post } = await params;
 
-  const { data } = await readMarkdownFile(post);
+  const { data, content } = await readMarkdownFile(post);
 
   return (
-    <Box justifyContent={"center"}>
-      <Typography>{post}</Typography>
-      <Typography>{data.title}</Typography>
+    <Box padding={1}>
       <Typography>{data.date}</Typography>
-      <Markdown>{`# ${post}`}</Markdown>
+      <Markdown
+        components={{
+          img: ({ ...props }) => (
+            <img
+              style={{
+                maxWidth: "100%",
+              }}
+              {...props}
+            />
+          ),
+        }}
+      >
+        {content}
+      </Markdown>
     </Box>
   );
 }
