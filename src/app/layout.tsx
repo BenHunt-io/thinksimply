@@ -2,7 +2,9 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { Providers } from "./providers";
+import { Header } from "./components/Header.tsx";
+import { MainContent } from "./components/MainContent.tsx";
+import { Providers } from "./providers.tsx";
 
 export default function RootLayout({
   children,
@@ -15,7 +17,10 @@ export default function RootLayout({
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          <MainContent>{children}</MainContent>
+        </Providers>
       </body>
     </html>
   );

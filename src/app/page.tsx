@@ -1,71 +1,7 @@
 "use client";
-import { Box, Link, Stack, Typography, useTheme } from "@mui/joy";
+import { Link, Stack, Typography, useTheme } from "@mui/joy";
 import dayjs from "dayjs";
-import { useRouter } from "next/navigation";
-
-const Header = () => {
-  const theme = useTheme();
-  return (
-    <Box
-      sx={{
-        p: theme.spacing(1),
-        position: "fixed",
-        height: "70px",
-        top: 0,
-        left: 0,
-        right: 0,
-        width: "100%",
-        backgroundColor: "#2B2B2B",
-      }}
-    >
-      <Stack>
-        <Typography
-          textAlign="center"
-          level="h2"
-          fontWeight={500}
-          sx={{ color: theme.palette.common.white }}
-        >
-          Think Simply
-        </Typography>
-
-        <Menu />
-      </Stack>
-    </Box>
-  );
-};
-
-const Menu = () => {
-  const theme = useTheme();
-  return (
-    <Stack direction="row" spacing={1} justifyContent={"center"} width={"100%"}>
-      <Typography
-        display={"inline"}
-        sx={{
-          color: theme.palette.common.white,
-        }}
-      >
-        posts
-      </Typography>
-      <Typography
-        display={"inline"}
-        sx={{
-          color: theme.palette.common.white,
-        }}
-      >
-        me
-      </Typography>
-    </Stack>
-  );
-};
-
-const Content = ({ children }: { children: React.ReactNode }) => {
-  const theme = useTheme();
-  return (
-    <Box sx={{ paddingTop: "86px" }}>
-      <Box sx={{ padding: theme.spacing() }}>{children}</Box>
-    </Box>
-  );
-};
+import { useRouter } from "next/navigation.js";
 
 const PostContainer = () => {
   return (
@@ -122,23 +58,18 @@ const Post = (props: {
 export default function Home() {
   const theme = useTheme();
   return (
-    <Box>
-      <Header />
-      <Content>
-        <Stack>
-          <Typography
-            level="body-md"
-            sx={{
-              color: theme.palette.common.black,
-              marginBottom: theme.spacing(4),
-            }}
-          >
-            <span style={{ fontWeight: 200 }}>by </span>
-            <span>Ben Hunt</span>
-          </Typography>
-          <PostContainer />
-        </Stack>
-      </Content>
-    </Box>
+    <Stack>
+      <Typography
+        level="body-md"
+        sx={{
+          color: theme.palette.common.black,
+          marginBottom: theme.spacing(4),
+        }}
+      >
+        <span style={{ fontWeight: 200 }}>by </span>
+        <span>Ben Hunt</span>
+      </Typography>
+      <PostContainer />
+    </Stack>
   );
 }
