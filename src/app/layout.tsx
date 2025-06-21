@@ -1,5 +1,3 @@
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -7,9 +5,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-          {children}
-      </body>
+      <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
