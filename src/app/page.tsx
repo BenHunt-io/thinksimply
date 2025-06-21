@@ -1,6 +1,7 @@
 "use client";
-import { Box, Stack, Typography, useTheme } from "@mui/joy";
+import { Box, Link, Stack, Typography, useTheme } from "@mui/joy";
 import dayjs from "dayjs";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const theme = useTheme();
@@ -71,16 +72,19 @@ const PostContainer = () => {
     <Stack spacing={4}>
       <Post
         title="Why do we experience the colors we experience?"
+        postId="why-do-we-experience-the-colors-we-experience"
         date={dayjs("2025-07-01")}
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       />
       <Post
         title="In defense of crypto"
-        date={dayjs("2025-07-01")}
+        postId="in-defense-of-crypto"
+        date={dayjs("2011-06-21")}
         description="Despite the crypto industry's notoriety for fraud, crypto is valuable. Learn why."
       />
       <Post
         title="Who are you?"
+        postId="who-are-you"
         date={dayjs("2021-07-01")}
         description="Fundamentally, what makes you, you?"
       />
@@ -90,16 +94,26 @@ const PostContainer = () => {
 
 const Post = (props: {
   title: string;
+  postId: string;
   date: dayjs.Dayjs;
   description: string;
 }) => {
   const theme = useTheme();
+  const router = useRouter();
   return (
     <Stack>
-      <Typography level="h3">{props.title}</Typography>
-      <Typography level="body-sm">{props.description}</Typography>
-      <Typography level="body-xs" sx={{ color: theme.palette.neutral[500] }}>
-        {props.date.format("MMM DD YYYY")}
+      <Link
+        level="h3"
+        color="primary"
+        onClick={() => router.push(`/posts/${props.postId}`)}
+      >
+        {props.title}
+      </Link>
+      <Typography level="body-md" fontWeight={400}>
+        {props.description}
+      </Typography>
+      <Typography level="body-xs" sx={{ color: theme.palette.neutral[400] }}>
+        {props.date.format("DD MMMM YYYY").toUpperCase()}
       </Typography>
     </Stack>
   );
