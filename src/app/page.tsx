@@ -1,3 +1,4 @@
+"use client";
 import { Box } from "@mui/joy";
 
 const Header = () => {
@@ -5,13 +6,12 @@ const Header = () => {
     <Box
       sx={{
         position: "fixed",
+        height: "60px",
         top: 0,
         left: 0,
         right: 0,
         width: "100%",
-        backgroundColor: "#171717",
-        color: "white",
-        padding: "1rem 2rem",
+        backgroundColor: "#2B2B2B",
       }}
     ></Box>
   );
