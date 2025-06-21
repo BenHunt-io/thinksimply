@@ -1,5 +1,6 @@
 "use client";
 import { Box, Stack, Typography, useTheme } from "@mui/joy";
+import dayjs from "dayjs";
 
 const Header = () => {
   const theme = useTheme();
@@ -57,20 +58,73 @@ const Menu = () => {
 };
 
 const Content = ({ children }: { children: React.ReactNode }) => {
-  return <Box sx={{ paddingTop: "86px" }}>{children}</Box>;
+  const theme = useTheme();
+  return (
+    <Box sx={{ paddingTop: "86px" }}>
+      <Box sx={{ padding: theme.spacing() }}>{children}</Box>
+    </Box>
+  );
+};
+
+const PostContainer = () => {
+  return (
+    <Stack spacing={4}>
+      <Post
+        title="Why do we experience the colors we experience?"
+        date={dayjs("2025-07-01")}
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      />
+      <Post
+        title="In defense of crypto"
+        date={dayjs("2025-07-01")}
+        description="Despite the crypto industry's notoriety for fraud, crypto is valuable. Learn why."
+      />
+      <Post
+        title="Who are you?"
+        date={dayjs("2021-07-01")}
+        description="Fundamentally, what makes you, you?"
+      />
+    </Stack>
+  );
+};
+
+const Post = (props: {
+  title: string;
+  date: dayjs.Dayjs;
+  description: string;
+}) => {
+  const theme = useTheme();
+  return (
+    <Stack>
+      <Typography level="h3">{props.title}</Typography>
+      <Typography level="body-sm">{props.description}</Typography>
+      <Typography level="body-xs" sx={{ color: theme.palette.neutral[500] }}>
+        {props.date.format("MMM DD YYYY")}
+      </Typography>
+    </Stack>
+  );
 };
 
 export default function Home() {
   const theme = useTheme();
   return (
-    <Stack>
+    <Box>
       <Header />
       <Content>
-        <Typography level="body-md" sx={{ color: theme.palette.common.black }}>
-          <span style={{ fontWeight: 200 }}>by </span>
-          <span>Ben Hunt</span>
-        </Typography>
+        <Stack>
+          <Typography
+            level="body-md"
+            sx={{
+              color: theme.palette.common.black,
+              marginBottom: theme.spacing(4),
+            }}
+          >
+            <span style={{ fontWeight: 200 }}>by </span>
+            <span>Ben Hunt</span>
+          </Typography>
+          <PostContainer />
+        </Stack>
       </Content>
-    </Stack>
+    </Box>
   );
 }
