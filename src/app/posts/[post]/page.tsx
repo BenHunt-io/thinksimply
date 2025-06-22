@@ -13,7 +13,7 @@ export default async function Post({
   const { data, content } = await readMarkdownFile(post);
 
   return (
-    <Box padding={1}>
+    <Box>
       <Typography>{data.date}</Typography>
       <Markdown
         components={{

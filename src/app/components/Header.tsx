@@ -1,5 +1,5 @@
 "use client";
-import { Box, Stack, Typography, useTheme } from "@mui/joy";
+import { Box, Link, Stack, Typography, useTheme } from "@mui/joy";
 
 export const Header = () => {
   const theme = useTheme();
@@ -36,14 +36,14 @@ const Menu = () => {
   const theme = useTheme();
   return (
     <Stack direction="row" spacing={1} justifyContent={"center"} width={"100%"}>
-      <Typography
-        display={"inline"}
+      <Link
         sx={{
           color: theme.palette.common.white,
+          textDecoration: "none",
         }}
       >
         posts
-      </Typography>
+      </Link>
       <Typography
         display={"inline"}
         sx={{

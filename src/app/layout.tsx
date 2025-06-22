@@ -2,7 +2,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { Header } from "./components/Header.tsx";
+import { LineHeader } from "./components/LineHeader.tsx";
 import { MainContent } from "./components/MainContent.tsx";
 import { Providers } from "./providers.tsx";
 
@@ -18,7 +18,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <Header />
+          <LineHeader />
           <MainContent>{children}</MainContent>
         </Providers>
       </body>
