@@ -1,33 +1,58 @@
 "use client";
-import { Box, Menu, Stack, Typography, useTheme } from "@mui/joy";
+import { Box, Link, Stack, Typography, useTheme } from "@mui/joy";
 
 export const LineHeader = () => {
   const theme = useTheme();
   return (
     <Box
       sx={{
-        p: theme.spacing(1),
         position: "fixed",
-        height: "70px",
+        height: "30px",
         top: 0,
         left: 0,
-        right: 0,
         width: "100%",
-        backgroundColor: "#2B2B2B",
       }}
     >
-      <Stack>
+      <Box
+        padding={1}
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        height="100%"
+        borderBottom={`1px solid ${theme.palette.common.black}`}
+      >
         <Typography
-          textAlign="center"
-          level="h2"
+          level="body-md"
           fontWeight={500}
-          sx={{ color: theme.palette.common.white }}
+          sx={{ color: theme.palette.common.black }}
         >
           Think Simply
         </Typography>
 
         <Menu />
-      </Stack>
+      </Box>
     </Box>
+  );
+};
+
+const Menu = () => {
+  const theme = useTheme();
+  return (
+    <Stack direction="row" spacing={1}>
+      <Link
+        sx={{
+          color: theme.palette.common.black,
+        }}
+      >
+        posts
+      </Link>
+      <Link
+        sx={{
+          color: theme.palette.common.black,
+        }}
+      >
+        me
+      </Link>
+    </Stack>
   );
 };

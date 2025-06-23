@@ -15,13 +15,13 @@ const PostContainer = () => {
       <Post
         title="In defense of crypto"
         postId="in-defense-of-crypto"
-        date={dayjs("2011-06-21")}
+        date={dayjs("2021-05-11")}
         description="Despite the crypto industry's notoriety for fraud, crypto is valuable. Learn why."
       />
       <Post
         title="Who are you?"
         postId="who-are-you"
-        date={dayjs("2021-07-01")}
+        date={dayjs("2020-07-01")}
         description="Fundamentally, what makes you, you?"
       />
     </Stack>
@@ -58,12 +58,11 @@ const Post = (props: {
 export default function Home() {
   const theme = useTheme();
   return (
-    <Stack>
+    <Stack spacing={2}>
       <Typography
         level="body-md"
         sx={{
           color: theme.palette.common.black,
-          marginBottom: theme.spacing(4),
         }}
       >
         <span style={{ fontWeight: 200 }}>by </span>

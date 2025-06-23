@@ -39,7 +39,6 @@ const Menu = () => {
       <Link
         sx={{
           color: theme.palette.common.white,
-          textDecoration: "none",
         }}
       >
         posts
