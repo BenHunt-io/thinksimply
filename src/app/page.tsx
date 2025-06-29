@@ -7,12 +7,6 @@ const PostContainer = () => {
   return (
     <Stack spacing={4}>
       <Post
-        title="Why do we experience the colors we experience?"
-        postId="why-do-we-experience-the-colors-we-experience"
-        date={dayjs("2025-07-01")}
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      />
-      <Post
         title="In defense of crypto"
         postId="in-defense-of-crypto"
         date={dayjs("2021-05-11")}

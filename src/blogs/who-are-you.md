@@ -1,5 +1,5 @@
 ---
-path: "/post-one"
+pathSegment: "who-are-you"
 date: "2020-07-01"
 title: "Who are you?"
 ---
