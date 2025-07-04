@@ -1,8 +1,10 @@
-import { blogSchema } from "@/app/posts/blogSchema.ts";
+import { postSchema } from "@/app/posts/postSchema.ts";
 import { Box, Typography } from "@mui/joy";
 import fs from "fs";
 import matter from "gray-matter";
 import Markdown from "react-markdown";
+
+const postsRelativePath = `./src/posts`;
 
 export default async function Post({
   params,
@@ -34,17 +36,16 @@ export default async function Post({
 }
 
 export async function generateStaticParams() {
-  const blogDirPath = `./src/blogs`;
-  const fileNames = await fs.promises.readdir(blogDirPath);
+  const fileNames = await fs.promises.readdir(postsRelativePath);
 
   const params = [];
   for (const fileName of fileNames) {
     const fileContent = await fs.promises.readFile(
-      `${blogDirPath}/${fileName}`,
+      `${postsRelativePath}/${fileName}`,
       "utf8",
     );
     const { data } = matter(fileContent);
-    const parsedData = blogSchema.parse(data);
+    const parsedData = postSchema.parse(data);
     params.push({ post: parsedData.pathSegment });
   }
 
@@ -54,7 +55,7 @@ export async function generateStaticParams() {
 // Need to figure out how to render the markdown without messing up the header
 async function readMarkdownFile(postPathSegment: string) {
   const file = await fs.promises.readFile(
-    `./src/blogs/${postPathSegment}.md`,
+    `${postsRelativePath}/${postPathSegment}.md`,
     "utf8",
   );
   const { data, content } = matter(file);
