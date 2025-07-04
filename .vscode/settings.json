@@ -1,12 +1,12 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
-    },
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-    "editor.formatOnType": false, // required
-    "editor.formatOnPaste": true, // optional
-    "editor.formatOnSave": true, // optional
-    "editor.formatOnSaveMode": "file", // required to format on save
-    "files.autoSave": "onFocusChange", // optional but recommended
-    "vs-code-prettier-eslint.prettierLast": false // set as "true" to run 'pr
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+    // TODO: For prettier, need to downgrade to typescript 4 or find a different formatter that supports TS5
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "editor.formatOnType": false, // required
+  "editor.formatOnPaste": true, // optional
+  "editor.formatOnSave": true, // optional
+  "editor.formatOnSaveMode": "file", // required to format on save
+  "files.autoSave": "onFocusChange", // optional but recommended
 }

@@ -1,5 +1,6 @@
 "use client";
 import { Box, Link, Stack, Typography, useTheme } from "@mui/joy";
+import { useRouter } from "next/navigation.js";
 
 export const LineHeader = () => {
   const theme = useTheme();
@@ -29,30 +30,43 @@ export const LineHeader = () => {
           Think Simply
         </Typography>
 
-        <Menu />
+        <Menu items={[
+          {
+            title: 'posts',
+            href: "/"
+          },
+          {
+            title: 'me'
+          }]} />
       </Box>
     </Box>
   );
 };
 
-const Menu = () => {
+interface MenuProps {
+  items: {
+    title: string,
+    href?: string
+  }[]
+}
+
+const Menu = (props: MenuProps) => {
   const theme = useTheme();
+  const router = useRouter();
+
   return (
     <Stack direction="row" spacing={1}>
-      <Link
-        sx={{
-          color: theme.palette.common.black,
-        }}
-      >
-        posts
-      </Link>
-      <Link
-        sx={{
-          color: theme.palette.common.black,
-        }}
-      >
-        me
-      </Link>
+      {props.items.map((item, index) => (
+        <Link
+          key={index}
+          sx={{
+            color: theme.palette.common.black,
+          }}
+          onClick={() => router.push(item.href ?? item.title)}
+        >
+          {item.title}
+        </Link>
+      ))}
     </Stack>
   );
 };
