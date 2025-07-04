@@ -74,7 +74,7 @@ const Menu = (props: MenuProps) => {
           sx={{
             color: theme.palette.common.black,
           }}
-          onClick={() => router.push(item.href ?? item.title)}
+          onClick={() => router.push(item.href ?? `/${item.title}`)}
         >
           {item.title}
         </Link>
