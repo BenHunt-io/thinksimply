@@ -1,37 +1,20 @@
+import Post from "@/app/components/Post.tsx";
 import { postSchema } from "@/app/posts/postSchema.ts";
-import { Box, Typography } from "@mui/joy";
 import fs from "fs";
 import matter from "gray-matter";
-import Markdown from "react-markdown";
 
 const postsRelativePath = `./src/posts`;
 
-export default async function Post({
+export default async function PostPage({
   params,
 }: {
   params: Promise<{ post: string }>;
 }) {
   const { post } = await params;
-  const { data, content } = await readMarkdownFile(post);
+  const { metadata, content } = await readMarkdownFile(post);
 
   return (
-    <Box>
-      <Typography>{data.date}</Typography>
-      <Markdown
-        components={{
-          img: ({ ...props }) => (
-            <img
-              style={{
-                maxWidth: "100%",
-              }}
-              {...props}
-            />
-          ),
-        }}
-      >
-        {content}
-      </Markdown>
-    </Box>
+    <Post markdownContent={content} title={metadata.title} />
   );
 }
 
@@ -59,5 +42,7 @@ async function readMarkdownFile(postPathSegment: string) {
     "utf8",
   );
   const { data, content } = matter(file);
-  return { data, content };
+  const metadata = postSchema.parse(data);
+
+  return { metadata, content };
 }

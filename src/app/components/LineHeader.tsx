@@ -18,38 +18,49 @@ export const LineHeader = () => {
       <Box
         padding={1}
         display="flex"
-        justifyContent="space-between"
-        alignItems="center"
+        justifyContent={'center'}
         height="100%"
-        borderBottom={`1px solid ${theme.palette.common.black}`}
         bgcolor={theme.palette.common.white}
-      >
-        <Link
-          level="body-md"
-          fontWeight={500}
-          sx={{
-            color: theme.palette.common.black,
-            '&:hover': {
-              textDecorationLine: 'none',
-              color: theme.palette.primary['500']
-            },
-            '&:active': {
-              color: theme.palette.primary['700']
-            }
-          }}
-          onClick={() => { router.push('/') }}
-        >
-          Think Simply
-        </Link>
 
-        <Menu items={[
-          {
-            title: 'posts',
-            href: "/"
-          },
-          {
-            title: 'me'
-          }]} />
+      >
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          width='100%'
+          borderBottom={`1px solid ${theme.palette.common.black}`}
+          sx={{
+            [theme.breakpoints.up('md')]: {
+              width: theme.maxPostWidth
+            }
+          }}>
+          <Link
+            level="body-md"
+            fontWeight={500}
+            sx={{
+              color: theme.palette.common.black,
+              '&:hover': {
+                textDecorationLine: 'none',
+                color: theme.palette.primary['500']
+              },
+              '&:active': {
+                color: theme.palette.primary['700']
+              }
+            }}
+            onClick={() => { router.push('/') }}
+          >
+            Think Simply
+          </Link>
+
+          <Menu items={[
+            {
+              title: 'posts',
+              href: "/"
+            },
+            {
+              title: 'me'
+            }]} />
+        </Box>
       </Box>
     </Box >
   );

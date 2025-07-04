@@ -1,7 +1,11 @@
 "use client";
 import { CssVarsProvider, extendTheme } from "@mui/joy";
 
+
+
+
 const theme = extendTheme({
+  maxPostWidth: 800,
   fontFamily: {
     body: "Roboto",
     display: "Roboto",

@@ -4,8 +4,6 @@ date: "2020-07-01"
 title: "Who are you?"
 ---
 
-# Who are you
-
 Are you the color of your skin? Are you obese? Are you a hometown hero? Are you a farmer in a rural village? Are you a serial entrepreneur? Are you what your parents fantasize you to be? Are you a spooky lump of self aware atoms? What makes you, **you?**
 
 I'll volunteering to be the guinea pig in the following introspection. I've been thinking deeply about this lately, in attempts to get at the core of who I am. I won't delve into too much detail about myself as we are about to unravel the fabric of my own reality, but I'm 24, a software developer in Austin Texas and am trying to figure out what I want to do / should be doing with my life. In doing, so I believe this will help you find your true identity, what truly make you, you. I do want to preface this in saying that I do not have a PhD in this subject and you must ultimately decide who you are for yourself.
