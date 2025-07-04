@@ -1,9 +1,10 @@
 "use client";
-import { Box, Link, Stack, Typography, useTheme } from "@mui/joy";
+import { Box, Link, Stack, useTheme } from "@mui/joy";
 import { useRouter } from "next/navigation.js";
 
 export const LineHeader = () => {
   const theme = useTheme();
+  const router = useRouter();
   return (
     <Box
       sx={{
@@ -23,13 +24,23 @@ export const LineHeader = () => {
         borderBottom={`1px solid ${theme.palette.common.black}`}
         bgcolor={theme.palette.common.white}
       >
-        <Typography
+        <Link
           level="body-md"
           fontWeight={500}
-          sx={{ color: theme.palette.common.black }}
+          sx={{
+            color: theme.palette.common.black,
+            '&:hover': {
+              textDecorationLine: 'none',
+              color: theme.palette.primary['500']
+            },
+            '&:active': {
+              color: theme.palette.primary['700']
+            }
+          }}
+          onClick={() => { router.push('/') }}
         >
           Think Simply
-        </Typography>
+        </Link>
 
         <Menu items={[
           {
