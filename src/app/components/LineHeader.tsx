@@ -21,6 +21,7 @@ export const LineHeader = () => {
         alignItems="center"
         height="100%"
         borderBottom={`1px solid ${theme.palette.common.black}`}
+        bgcolor={theme.palette.common.white}
       >
         <Typography
           level="body-md"
@@ -39,7 +40,7 @@ export const LineHeader = () => {
             title: 'me'
           }]} />
       </Box>
-    </Box>
+    </Box >
   );
 };
 
