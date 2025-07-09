@@ -7,17 +7,12 @@ export const MainContent = ({ children }: { children: React.ReactNode }) => {
     <Box sx={{
       width: '100%',
       display: 'flex',
-
-      [theme.breakpoints.up('md')]: {
-        justifyContent: 'center',
-      },
+      justifyContent: 'center',
       paddingTop: "39px",
     }}>
       <Box sx={{
-        [theme.breakpoints.up('md')]: {
-          maxWidth: theme.maxPostWidth,
-          width: theme.maxPostWidth
-        }
+        maxWidth: theme.maxPostWidth,
+        width: theme.maxPostWidth
       }} pt={1} pb={1}>
         {children}
       </Box>

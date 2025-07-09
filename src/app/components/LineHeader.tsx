@@ -29,10 +29,8 @@ export const LineHeader = () => {
           alignItems="center"
           width='100%'
           borderBottom={`1px solid ${theme.palette.common.black}`}
+          maxWidth={theme.maxPostWidth}
           sx={{
-            [theme.breakpoints.up('md')]: {
-              width: theme.maxPostWidth
-            }
           }}>
           <Link
             level="body-md"
