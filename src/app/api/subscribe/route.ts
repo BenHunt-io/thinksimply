@@ -1,4 +1,4 @@
-import brevo from '@getbrevo/brevo';
+import * as Brevo from '@getbrevo/brevo';
 import { NextResponse } from 'next/server.js';
 import z from "zod/v4";
 
@@ -7,6 +7,8 @@ const requestSchema = z.object({
 })
 
 export async function POST(request: Request) {
+    console.log(`Brevo Client: ${JSON.stringify(Brevo)}`);
+
     const requestBody = await request.json();
     const parsedBody = requestSchema.parse(requestBody);
 
@@ -14,8 +16,9 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "BREVO_API_KEY is not set" }, { status: 500 });
     }
 
-    const brevoClient = new brevo.ContactsApi();
-    brevoClient.setApiKey(brevo.ContactsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
+
+    const brevoClient = new Brevo.ContactsApi();
+    brevoClient.setApiKey(Brevo.ContactsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
 
     const blogSubscriberListId = 3;
 
