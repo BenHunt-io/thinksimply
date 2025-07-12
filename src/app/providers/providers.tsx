@@ -1,6 +1,6 @@
 "use client";
 import { CssVarsProvider, extendTheme } from "@mui/joy";
-import { PostHogProvider } from "./PosthogProvider.js";
+import { PostHogProvider } from "./PosthogProvider.tsx";
 
 
 
