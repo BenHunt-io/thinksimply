@@ -4,7 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { LineHeader } from "./components/LineHeader.tsx";
 import { MainContent } from "./components/MainContent.tsx";
-import { Providers } from "./providers.tsx";
+import { Providers } from "./providers/providers.tsx";
 
 export default function RootLayout({
   children,

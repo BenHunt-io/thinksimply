@@ -1,5 +1,6 @@
 "use client";
 import { CssVarsProvider, extendTheme } from "@mui/joy";
+import { PostHogProvider } from "./PosthogProvider.js";
 
 
 
@@ -31,5 +32,9 @@ const theme = extendTheme({
 });
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
-  return <CssVarsProvider theme={theme}>{children}</CssVarsProvider>;
+  return <CssVarsProvider theme={theme}>
+    <PostHogProvider>
+      {children}
+    </PostHogProvider>
+  </CssVarsProvider>;
 };
