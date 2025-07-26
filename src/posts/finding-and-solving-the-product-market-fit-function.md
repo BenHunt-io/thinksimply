@@ -1,11 +1,20 @@
 ---
-pathSegment: "solving-the-product-market-fit-equation"
+pathSegment: "finding-and-solving-the-product-market-fit-function"
 date: "2025-07-13"
-title: "The product market fit equation"
+title: "The product market fit function"
 ---
 
 Concept:
-  - Equations model things. They predict something. 
+
+
+  - **Modeling**
+    - Solving an equation is finding all the inputs that make the equation true.
+      - Different permutations of inputs can have the same solution
+      - Incorrect equations exist and have no solutions
+    - Equations represent the how inputs relate to eachother and the output.
+      - To model something is to predict it.
+
+
   - There exists a function that predicts whether someone will buy something. This function take's as inputs a person's needs and the set of features that comprise the product.
   - Each person has a different threshold for what they are willing to pay for something as a function of what their time is worth or how much they value experiences and the particular experience that you provide.
   - Functions like f(x) = 2x + 1 have a fixed set of solutions. It could model your current speed if you increased your speed by 2mph per minute starting at 1mph. A functon is fundamentally saying, given these inputs this is the output.
@@ -27,14 +36,23 @@ Concept:
     - Incentivize them to answer your question.
 
 
+
+
 Outline:
- - What is product market fit?
+ - There exists an equation that predicts product market fit.
  - Why do people buy things?
  - What is the function that models my own wants?
  - What is the function that models my willingness to pay to have my wants satisifed?
  - The function exists in the consumer's mind
  - Testing the function
  - Iterate
+
+Outline 2:
+  - Assert that there is an equation that predicts customers willingness to buy which you can use to determine if you've reached product market fit. Thinking of the equation as a function that takes some inputs and predicts willingness to buy.
+  - Defining the inputs
+  - Defining the impl
+  - Testing the function
+  - Iterate
 
 
  - Functions model / predict things. Finding the right function. 
@@ -50,26 +68,31 @@ Outline:
 - The implementation only affects cost
 - Iterate
 
+ 
 # Post
-Let's start by first understanding how product market fit was originally defined by Andy Rachleff. Product market fit is "a unique product offering that people desperately want." This is ultimately the goal of creating businesses and products, to create something people are willing to pay for. You know you haven't found product market fit if nobody is willing to buy your product. So, how do you find product market fit and what does it mean to try and "find" it?
 
-When first have an idea for a product, you most likely do not also know the function that predicts whether someone is willing to pay for it. At best, you have a theory of what that function is. To find this function, you must understand why it is that people buy things at all.
+There exists a function that predicts a person's willingness to buy a product. A business who sells products must find this function to be successful. 
 
-People buy things for two reasons, either for utility or for experience. In buying for utility, you are buying to save yourself time and energy. This time and energy may be either used to save yourself more time and energy or can be spent on experience. In buying for experience, you are just buying for the experience. A utility purchase would be buying a vacuum while an experential one, a concert.
+The function takes as input the product and spits out whether a person is willing to buy it. Although this appears as one input, it's helpful to see the product as being comprised of a set of variables, or features. Just like regular mathematical functions, there can be many inputs that have negligible impact to the output. In our case, there may be many features of a product that a person doesn't care about. Seeing the input as many inputs allows us to not throw the baby out with the bath water. There may be some features that a person cares about in a product and others that they don't. How do we find the inputs that signficantly impact the output in a positive way?
 
-Based on each person's life, there exists areas of improvement whether that be to save them time in energy in what they do daily or to enhance their experience. To improve their situation, they have two choices, do it themselves or pay for something that does it or helps them do it. The set of things that a person would want to improve are their wants.
+Searching for the high impact inputs requires a deeper understanding of the output that we are trying to predict, a customer's willingness to buy. What makes a person willing to buy anything? What is buying?
 
-The first half of finding the function that predicts a person's willigness to buy is identifying if they even want the product. For example, let's take a fictious person Joe who works at Starbucks. Joe may want to spend less time and energy cleaning his house every week. It's boring and can take up the a couple hours in the morning. There is a function that models how much Joe wants to improve this problem. This function may be represented as: degreeOfWant(energySpent, healthSpent, timeSpent, enjoymentOfTask, difficultyOfTask). Inputs are areas of improvement in Joe's life weighted by how much he cares about those different facets. The output is how much he wants to solve the problem.
+A purchase is an exchange of money for a product or service. It's criticial to understand what it is that they are exchanging for what. Money is a representation of time and energy and is earned by expending those two things. It can be exchanged for two things: something that can be used to save you time and energy, or an experience. For example, buying a vacuum cleaner versus purchasing concert tickets. What makes people willing to make this exchange? Let's focus on the purchase a person would make to save them time and energy.
 
-If I'm building a product that that is trying to sell to Joe, I may not fully understand what he wants or how much he wants what. If I'm trying to sell him a vacuum I may think that the most of the pain that Joe experiences in cleaning is from vacuuming when in reality it's getting the stains out of the carpet from his young children. My function would incorrectly predict his degree of want. 
+To understand whether they will buy your product, you first have to understand how valuable they perceive their time to be. A person making minimum wage is going to be much less likely to buy a $1,000 vacuum that saves them an hour worth of work a week, while a billioniare wouldn't hestitate. Every hour saved is extremely valuable to them. Secondly, you have to understand how much time and energy the product would save them. For simplicity, ignoring the enjoyment of the task, a person would be more likely to buy a product given that they spent less time and energy earning the money as they will save by using the product.
 
+The areas of improvement, or where time and energy could be saved, in a person's life can be thought of as their needs. Their needs is what weights the impact of the inputs on the output. It is what determines what inputs actually matter. Their needs being multipled by the inputs and correlated to the other inputs is what comprises the function, this is the implementation. Their needs and the implementation of the function lives a person's mind. Without being them, we can only approximate what their needs may be.
 
+To determine a person's needs requires interacting with their mind and observing how they react. The two things we are trying to extract out are: what are their needs and do our inputs actually satisify their needs? We may perfectly understand their needs but build a product that actually doesn't meet their needs. The function would take as input your product and all of the features would just be weighted down to zero as no needs were met.
 
-Whether a customer wants a product is independent of whether a customer is willing to pay for it. If a customer had to stack rank all existing products on the market independent of price, the customer may not be willing to pay for any of the top 10 things because they can't afford it. 
+There are many modes of interacting with a person to help build your function:
+- physically asking
+- selling the product
+- observing them use the product
+- questionaire
+- waitlist
 
-
-
-
+You may be able to build a cheap approximation of their needs without first building the product. Building the product can often be the most expensive part and you don't want to find out after the fact that the function  was existed soley in your mind does not actually predict their willingness to buy.
 
 **References:**
 
