@@ -5,6 +5,7 @@ import matter from "gray-matter";
 
 const postsRelativePath = `./src/posts`;
 
+
 export default async function PostPage({
   params,
 }: {
@@ -18,22 +19,22 @@ export default async function PostPage({
   );
 }
 
-export async function generateStaticParams() {
-  const fileNames = await fs.promises.readdir(postsRelativePath);
+// export async function generateStaticParams() {
+//   const fileNames = await fs.promises.readdir(postsRelativePath);
 
-  const params = [];
-  for (const fileName of fileNames) {
-    const fileContent = await fs.promises.readFile(
-      `${postsRelativePath}/${fileName}`,
-      "utf8",
-    );
-    const { data } = matter(fileContent);
-    const parsedData = postSchema.parse(data);
-    params.push({ post: parsedData.pathSegment });
-  }
+//   const params = [];
+//   for (const fileName of fileNames) {
+//     const fileContent = await fs.promises.readFile(
+//       `${postsRelativePath}/${fileName}`,
+//       "utf8",
+//     );
+//     const { data } = matter(fileContent);
+//     const parsedData = postSchema.parse(data);
+//     params.push({ post: parsedData.pathSegment });
+//   }
 
-  return params;
-}
+//   return params;
+// }
 
 // Need to figure out how to render the markdown without messing up the header
 async function readMarkdownFile(postPathSegment: string) {
