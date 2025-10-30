@@ -19,7 +19,7 @@ export default async function PostPage({
 
   return (
     <>
-      <Typography level="h1">{process.env.RUNTIME_VARIABLE || "No runtime variable"}</Typography>
+      <Typography level="h1">{new Date().toISOString()}</Typography>
       <Post markdownContent={content} title={metadata.title} />
     </>
   );
